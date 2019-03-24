@@ -1,0 +1,158 @@
+---
+# Schema Doc for Gametype Payload
+name:
+  type: string
+
+baseType:
+  type: enum
+  enum:
+    - CTF
+    - KoTH
+    - Slayer
+    - Oddball
+    - Race
+
+playerOptions:
+  respawn:
+
+    delay:
+      type: enum
+      enum:
+        - 0s
+        - 5s
+        - 10s
+        - 15s
+
+    delayGrowth:
+      type: enum
+      enum:
+        - 0s
+        - 5s
+        - 10s
+        - 15s
+
+  lives:
+    type: enum
+    enum:
+      - Infinite
+      - 3
+      - 5
+
+  health:
+    type: enum
+    enum:
+      - 50%
+      - 100%
+      - 150%
+      - 200%
+      - 300%
+      - 400%
+
+itemOptions:
+  weaponSet:
+    type: enum
+    enum:
+      - classic
+      - heavy
+      - normal
+      - pistols
+      - rifles
+      - plasma
+      - sniper
+      - no-sniper
+      - rockets
+      - shotguns
+      - close-range
+      - human
+      - covenant
+
+  startSet:
+    type: enum
+    enum:
+      - custom
+      - generic
+
+  infiniteGrenades:
+    type: bool
+  
+vehicleOptions:
+  respawnTime:
+    type: enum
+    enum:
+      - 0 sec
+      - 30 sec
+      - 60 sec
+      - 90 sec
+      - 2 min
+      - 3 min
+      - 5 min
+
+  warthogs:
+    type: num
+    min: 0
+    max: 4
+
+  rocketWarthogs:
+    type: num
+    min: 0
+    max: 4
+
+  scorpians:
+    type: num
+    min: 0
+    max: 4
+
+  ghosts:
+    type: num
+    min: 0
+    max: 4
+
+  banshees:
+    type: num
+    min: 0
+    max: 4
+
+  gunTurrets:
+    type: num
+    min: 0
+    max: 4
+
+indicatorOptions:
+  objectives:
+    type: enum
+    enum:
+      - None
+      - Nav Points
+      - Motion Tracker
+
+  radar:
+    type: enum
+    enum:
+      - none
+      - friends
+      - all
+  
+  friends:
+    type: bool
+  
+teamOptions:
+  friendlyFire:
+    options:
+      type: enum
+      enum:
+        - off
+        - on
+        - Shield Only
+        - Explosives Only
+
+    penalty:
+      type: enum
+      enum:
+        - 0s
+        - 5s
+        - 10s
+        - 15s
+  
+  allowSwitch:
+    type: bool
+
