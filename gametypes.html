@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <style>
+        .headerChev {
+            font-size: 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title" style="text-align: center;">Create New GameType</h1>
+            </div>
+            <!-- Entire Page is a Panel - this is the body -->
+            <div class="panel-body">
+                <!-- Main Header -->
+                <div class="container-fluid">
+                    <!-- Main Header -->
+                    <div class="row" style="padding-bottom: 20px;">
+                        <!-- Name -->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="text" value="NewGameType" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BaseType -->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <label>BaseType</label>
+                                </div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                    <select>
+                                        <option>Capture the Flag</option>
+                                        <option>King of the Hill</option>
+                                        <option>Slayer</option>
+                                        <option>Oddball</option>
+                                        <option>Race</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PLayer Options -->
+                <!--
+                ids:
+                    respawnDelay
+                    respawnDelayGrowth
+                    playerLives
+                    playerHealth
+                    playerShields
+                    playerInvisible
+                    playerOddMan
+                -->
+                <div class="container-fluid">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" href="#PlayerOptions">
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <h4 class="panel-title">Player Options</h4>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <i class="fas fa-chevron-circle-down headerChev"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-collapse collapse" id="PlayerOptions">
+                                <!-- Respawn and Options -->
+                                <div class="panel-body">
+                                    <!-- header-->
+                                    <div class="row" style="padding-bottom: 10px;">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <h4 class="panel-title">Respawn</h4>
+                                        </div>
+                                    </div>
+                                    <!-- Respawn Details (Delay / DelayGrowth) -->
+                                    <div class="row">
+                                        <!-- Delay -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Delay</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="respawnDelay">
+                                                        <option>0s</option>
+                                                        <option>5s</option>
+                                                        <option>10s</option>
+                                                        <option>15s</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Delay Growth -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <!-- label -->
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Delay Growth</label>
+                                                </div>
+                                                <!-- value -->
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="respawnDelayGrowth">
+                                                        <option>0s</option>
+                                                        <option>5s</option>
+                                                        <option>10s</option>
+                                                        <option>15s</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Lives / Health-->
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <!-- Lives -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Lives</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="playerLives">
+                                                        <option>&#x221e;</option>
+                                                        <option>3</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Health -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Health</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="playerHealth">
+                                                        <option>50%</option>
+                                                        <option>100%</option>
+                                                        <option>150%</option>
+                                                        <option>200%</option>
+                                                        <option>300%</option>
+                                                        <option>400%</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Shields / Invisible / OddMan Out -->
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <!-- Shields -->
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Shields</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input id="playerShields" type="checkbox"></input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Invisible -->
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                    <label>Invisible</label>
+                                                </div>
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <input id="playerInvisible" type="checkbox"></input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- OddMan Out-->
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                    <label>OddMan Out</label>
+                                                </div>
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <input id="playerOddMan" type="checkbox"></input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item Options -->
+                <!-- 
+
+                ids:
+                    itemWeaponSet
+                    itemStartSet
+                    itemInfiniteGrenades
+
+                -->
+                <div class="container-fluid">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" href="#itemOptions">
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <h4 class="panel-title">Item Options</h4>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <i class="fas fa-chevron-circle-down headerChev"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-collapse collapse" id="itemOptions">
+                                <!-- Weapon Set / Start Set -->
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <!-- Weapon Set-->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <!-- Label -->
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Weapon Set</label>
+                                                </div>
+                                                <!-- Value -->
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="itemWeaponSet">
+                                                        <option>Classic</option>
+                                                        <option>Heavy</option>
+                                                        <option>Normal</option>
+                                                        <option>Pistols</option>
+                                                        <option>Rifles</option>
+                                                        <option>Plasma</option>
+                                                        <option>Sniper</option>
+                                                        <option>No Sniper</option>
+                                                        <option>Rockets</option>
+                                                        <option>Shotguns</option>
+                                                        <option>Close Range</option>
+                                                        <option>Human</option>
+                                                        <option>Covenant</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Start Set -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Start Set</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="itemStartSet">
+                                                        <option>Custom</option>
+                                                        <option>Generic</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Infinite Grenades -->
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                    <label>Infinite Grenades</label>
+                                                </div>
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <input id="itemInfiniteGrenades" type="checkbox"></input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vehicle Options-->
+                <!--
+                ids:
+                    vehicleRespawn
+                    vehicleLoad
+                        vehicleCustomWarthog
+                        vehicleCustomRWarthog
+                        vehicleCustomGhosts
+                        vehicleCustomBanshees
+                        vehicleCustomScorpians
+                        vehicleCustomGunTurrets
+                -->
+                <div class="container-fluid">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" href="#vehicleOptions">
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <h4 class="panel-title">Vehicle Options</h4>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <i class="fas fa-chevron-circle-down headerChev"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-collapse collapse" id="vehicleOptions">
+                                <!-- Respawn Time -->
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                    <label>Respawn Time</label>
+                                                </div>
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <select id="vehicleRespawn">
+                                                        <option>0</option>
+                                                        <option>30 sec</option>
+                                                        <option>60 sec</option>
+                                                        <option>90 sec</option>
+                                                        <option>2 min</option>
+                                                        <option>3 min</option>
+                                                        <option>5 min</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Vehicle Loadout</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="vehicleLoad">
+                                                        <option>Warthogs</option>
+                                                        <option>Ghosts</option>
+                                                        <option>Scorpians</option>
+                                                        <option>Rocket Warthogs</option>
+                                                        <option>Banshees</option>
+                                                        <option>Gun Turrets</option>
+                                                        <option>Custom</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Custom Options-->
+                                <div class="panel-body collapse" id="customOptions">
+                                    <!-- Warthogs/Ghosts -->
+                                    <div class="row">
+                                        <!-- Warthogs -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Warthogs</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input type="number" max="4" min="0" value="0"
+                                                        id="vehicleCustomWarthog" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Ghosts-->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Ghosts</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input type="number" max="4" min="0" value="0"
+                                                        id="vehicleCustomGhosts" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Rocket Warthogs / Banshees -->
+                                    <div class="row">
+                                        <!-- Rocket Warthogs -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Rocket Warthogs</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input type="number" max="4" min="0" value="0"
+                                                        id="vehicleCustomRWarthogs" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Banshees -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Banshees</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input type="number" max="4" min="0" value="0"
+                                                        id="vehicleCustomBanshees" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Scorpians/Gun Turrets -->
+                                    <div class="row">
+                                        <!-- Scorpians -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Scorpians</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input type="number" max="4" min="0" value="0"
+                                                        id="vehicleCustomScorpians" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Gun Turrets -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Gun Turrets</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <input type="number" max="4" min="0" value="0"
+                                                        id="vehicleCustomGunTurrets" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Indicator Options -->
+                <!-- 
+                    indicatorObjectives
+                    indicatorRadar
+                    indicatorFriend
+                -->
+                <div class="container-fluid">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" href="#indicatorOptions">
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <h4 class="panel-title">Indicator Options</h4>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <i class="fas fa-chevron-circle-down headerChev"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-collapse collapse" id="indicatorOptions">
+                                <!-- Objectives / Radar-->
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <!-- Objectives -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Objectives Indicator</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="indicatorObjectives">
+                                                        <option>None</option>
+                                                        <option>Nav Points</option>
+                                                        <option>Motion Tracker</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Radar -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Radar</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="indicatorRadar">
+                                                        <option>None</option>
+                                                        <option>Friends</option>
+                                                        <option>All</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                    <label>Friend Indicator</label>
+                                                </div>
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <input id="indicatorFriend" type="checkbox" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Options-->
+                <!--
+                    ids:
+                        teamFFOptions                        
+                        teamFFPenalty
+                        teamAllowSwitch
+                -->
+                <div class="container-fluid">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" href="#teamOptions">
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <h4 class="panel-title">Team Options</h4>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <i class="fas fa-chevron-circle-down headerChev"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-collapse collapse" id="teamOptions">
+                                <div class="panel-body">
+                                    <!-- Firendly Fire Header-->
+                                    <div style="padding-bottom: 10px;" class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <h4 class="panel-title">Friendly Fire</h4>
+                                        </div>
+                                    </div>
+                                    <!-- Options / Penalty -->
+                                    <div class="row">
+                                        <!-- FF Options -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Options</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="teamFFOptions">
+                                                        <option>Off</option>
+                                                        <option>On</option>
+                                                        <option>Shield Only</option>
+                                                        <option>Explosives Only</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- FF Pentalty -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <label>Penalty</label>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                                    <select id="teamFFPenalty">
+                                                        <option>0</option>
+                                                        <option>5 sec</option>
+                                                        <option>10 sec</option>
+                                                        <option>15 sec</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Allow Team Switch / -- -->
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <!-- Team Switch -->
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                    <label>Allow Team Switch</label>
+                                                </div>
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <input id="teamAllowSwitch" type="checkbox" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+
+            function customVehicleOptions() {
+                console.log("Vehicle Options Changed")
+                var vehicleOption = $('#vehicleLoad').val()
+
+                if (vehicleOption == "Custom") {
+                    $("#customOptions").attr('aria-expanded', true)
+                    $("#customOptions").addClass("in")
+                }
+                else {
+                    $("#customOptions").attr('aria-expanded', false)
+                    $("#customOptions").removeClass("in")
+                }
+
+                console.log(vehicleOption)
+            }
+
+            $("#vehicleLoad").on("change", customVehicleOptions)
+
+        });
+
+
+    </script>
+</body>
