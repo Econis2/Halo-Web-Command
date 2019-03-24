@@ -1,0 +1,48 @@
+{
+    "status":"success",
+    "data":{
+        "name": "New GameType",
+        "baseType": "CTF",
+        "options":{
+            "player":{
+                "respawn":{
+                    "delay": 0,
+                    "delayGrowth": 0
+                },
+                "lives": 0,
+                "health": "50%",
+                "shields": true,
+                "invisiable": true,
+                "oddMan": true
+            },
+            "item":{
+                "weaponSet": "NoSnipe",
+                "startSet": "Custom",
+                "infinteGrenades": true
+            },
+            "vehicle":{
+                "respawnTime": 30,
+                "package":{
+                    "warthog": 3,
+                    "rocketWarhog": 2,
+                    "scorpian": 1,
+                    "ghost": 0,
+                    "banshee": 4,
+                    "gunTurret": 2
+                }
+            },
+            "indicator": {
+                "ojectives": "none",
+                "radar": "none",
+                "friend": true
+            },
+            "team":{
+                "firendlyFire":{
+                    "options": "Shield Only",
+                    "penalty": 5
+                },
+                "allowSwitch": true
+            }
+        }
+    }
+}
