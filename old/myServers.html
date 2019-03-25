@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+</head>
+<body>
+
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <h4 class="panel-title">{{ ServerName }}</h4>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <button class="btn fas fa-step-backward">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <button class="btn fas fa-stop">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <button class="btn fas fa-play">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <button class="btn fas fa-step-forward">
+                            </div>
+                        </div>                        
+                    </div>
+                    <!-- Scrolling Preview -->
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                        <input id="{{ serverNameTicker }}" type="text" class="form-control" placeholder="{{ Ticker Info }}" readonly>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                        <button class="endChev btn fas fa-angle-double-down" name="chev1" data-toggle="collapse" href="#server1"></button>
+                    </div>             
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="server1">
+                <div class="panel-body">
+                    <!-- Basic Server Info-->
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <input type="text" class="form-control" placeholder="{{ Uptime Info }}" readonly>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <input type="text" class="form-control" placeholder="{{ Map Name }}" readonly>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <input type="text" class="form-control" placeholder="{{ Game Type }}" readonly>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Details -->
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" href="#server1Details">
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <h4 class="panel-title">Details</h4>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <button class="endChev btn fas fa-angle-double-down" name="chev2" data-toggle="collapse" href="#server1Details"></button>
+                                    </div>             
+                                </div>
+                            </div>
+                            <div class="panel-collapse collapse" id="server1Details">
+                                <div class="panel-body">
+                                    <form>
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-xs-2 col-sm-2 col-md-2 col-lg-2">Name</label>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                <input type="text" value="{{ Server Name }}" class="form-control" readonly>
+                                            </div>
+                                            <label class="col-form-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Max Players</label>
+                                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                <input type="number" min="1" max="16" class="form-control">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Player Settings-->
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <h4 class="panel-title">Player Settings</h4>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <button class="endChev btn fas fa-angle-double-down" name="chev3" data-toggle="collapse" href="#server1PLayerSettings"></button>
+                                    </div>             
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-collapse collapse" id="server1PLayerSettings">
+                            <div class="panel-body">
+
+                                <!-- Ban List -->
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                                    <h4 class="panel-title">Ban List</h4>
+                                                </div>
+                                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                    <button class="endChev btn fas fa-angle-double-down" name="chev4" data-toggle="collapse" href="#server1BanList"></button>
+                                                </div>
+                                            </div>
+
+
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="server1BanList">
+                                        <div class="panel-body">
+            
+            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Team Killing -->
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                                    <h4 class="panel-title">Team Killing</h4>
+                                                </div>
+                                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                    <button class="endChev btn fas fa-angle-double-down" name="chev5" data-toggle="collapse" href="#server1TeamKill"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="server1TeamKill">
+                                        <div class="panel-body">
+                                            <form>
+
+                                                <!-- Limit -->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-xs-4 col-sm-4 col-md-4 col-lg-4">Limit</label> 
+                                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                        <input type="number" min="0" class="form-control">
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                        <select class="form-control">
+                                                            <option>sec</option>
+                                                            <option>min</option>
+                                                            <option>hour</option>
+                                                            <option>days</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Grace -->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-xs-4 col-sm-4 col-md-4 col-lg-4">Grace</label> 
+                                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                        <input type="number" min="0" class="form-control">
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                        <select class="form-control">
+                                                            <option>sec</option>
+                                                            <option>min</option>
+                                                            <option>hour</option>
+                                                            <option>days</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Cool Down-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-xs-4 col-sm-4 col-md-4 col-lg-4">Cool Down</label> 
+                                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                        <input type="number" min="0" class="form-control">
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                        <select id="tkTypeCoolDown" class="form-control">
+                                                            <option>sec</option>
+                                                            <option>min</option>
+                                                            <option>hour</option>
+                                                            <option>days</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+            
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Maps -->
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                        <h4 class="panel-title">Maps</h4>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <button class="endChev btn fas fa-angle-double-down" name="chev6" data-toggle="collapse" href="#server1Maps"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-collapse collapse" id="server1Maps">
+                            <div class="panel-body">
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+function toggleChev(item){
+
+    //console.log(item)
+    $("button[name="+ item.name + "]").toggleClass('fa-angle-double-up')
+    $("button[name="+ item.name + "]").toggleClass('fa-angle-double-down')
+}
+
+function checkEndChev(target){
+    var classes = ($("button[name="+ target.name + "]").attr("class")).split(" ")
+
+    return classes.includes("endChev")
+}
+
+
+$(document).on('click', function (event){
+
+    if(checkEndChev(event.target)){
+        toggleChev(event.target)
+    }
+
+})
+
+
+
+
+</script>
+
+
+</body>

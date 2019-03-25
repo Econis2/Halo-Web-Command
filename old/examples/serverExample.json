@@ -1,0 +1,36 @@
+{
+    "name": "My Halo Server",
+    "status": "running",
+    "maxPlayers": 16,
+    "maps":[
+        {
+            "index": 0,
+            "name": "bloodgulch",
+            "type": "slayer"
+        },
+        {
+            "index": 1,
+            "name": "timberland",
+            "type": "ctf"
+        }
+    ],
+    "Ban":{
+        "List":[
+            "user1",
+            "user2"
+        ],
+        "settings":{
+            "penalty": [
+                "4s",
+                "30m",
+                "1h",
+                "2d"
+            ],
+            "teamKill":{
+                "limit": 4,
+                "grace": "3s",
+                "cooldown": "3m"
+            }
+        }
+    }
+}
